@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ahorcado</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #e7e411, #0d47a1);
+            color: #fff;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1, h2 {
+            margin: 20px 0;
+            font-weight: bold;
+        }
+
+        #pantalla-menu, #pantalla-juego {
+            padding: 20px;
+        }
+
+        button {
+            background: #42a5f5;
+            border: none;
+            padding: 12px 20px;
+            margin: 8px;
+            border-radius: 10px;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background: #1e88e5;
+            transform: scale(1.05);
+        }
+
+        button.active {
+            background: #000000;
+        }
+
+        #letras button {
+            width: 40px;
+            height: 40px;
+            margin: 5px;
+            border-radius: 8px;
+            font-weight: bold;
+            background: #1976d2;
+        }
+
+        #letras button.correcta {
+            background: #ffd900 !important;
+        }
+
+        #letras button.incorrecta {
+            background: #dfcb18 !important;
+        }
+
+        #palabra-mostrada {
+            font-size: 28px;
+            letter-spacing: 8px;
+            margin: 20px 0;
+        }
+
+        #mensaje {
+            font-size: 22px;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+
+        canvas {
+            background: #eceff1;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="pantalla-menu">
+        <h1>- Ahorcado Pablo Ortiz -</h1>
+        <h2>Elige la dificultad</h2>
+        <div id="selector-dificultad">
+            <button data-dificultad="facil">Facil</button>
+            <button data-dificultad="medio">Medio</button>
+            <button data-dificultad="dificil">Dificil</button>
+        </div>
+        <br>
+        <button id="boton-jugar">Jugar</button>
+    </div>
+    <div id="pantalla-juego" style="display:none;">
+        <h2 id="nivel-actual"></h2>
+        <canvas id="lienzoAhorcado" width="400" height="400"></canvas>
+        <div id="palabra-mostrada"></div>
+        <div id="letras"></div>
+        <div id="mensaje"></div>
+        <br>
+        <button id="boton-reiniciar" style="display:none;">Reiniciar</button>
+        <button id="boton-volver" style="display:none;">Volver</button>
+    </div>
+    <script src="1-ahorcado.js"></script>
+
+</body>
+</html>
